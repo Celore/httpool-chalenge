@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  httpool:
+    image: mariadb
+    ports:
+      - 6033:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=httpool
+      - MYSQL_PASSWORD=httpool
+      - MYSQL_USER=httpool
+      - MYSQL_DATABASE=library
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  
+
+  phpmyadmin:
+    depends_on:
+      - httpool
+    image: phpmyadmin
+    ports:
+      - 8081:80
+    environment:
+      - PMA_ARBITRARY=1   
+      - PMA_HOST=httpool
+      - PMA_USER=httpool
+      - PMA_PASSWORD=httpool

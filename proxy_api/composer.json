@@ -1,0 +1,28 @@
+{
+    "name": "eyushhenkov/proxy_api",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Evgeny Yushchenkov",
+            "email": "EYUshhenkov@ibs.ru"
+        }
+    ],
+    "require": {
+        "slim/slim": "^4.10",
+        "slim/psr7": "^1.5",
+        "guzzlehttp/guzzle": "^7.5",
+        "php-di/php-di": "^6.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
